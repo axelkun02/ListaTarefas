@@ -1,0 +1,11 @@
+<h1 style="color: rgb(30, 238, 11); font-size: 50px;">
+    Lista de tarefas
+</h1><ul style="list-style-type: square; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serifs;">
+    <li *ngFor="let tarefa of tarefas">
+      <span [ngStyle]="{'text-decoration': tarefa.concluida ? 'line-through' : 'none'}">
+        {{ tarefa.descricao }} 
+        - {{ tarefa.concluida ? 'Finalizado' : 'A fazer' }} <br>
+      </span>
+      <button (click)="toggleConcluida(tarefa)">Finalizar</button>
+    </li>
+  </ul>
